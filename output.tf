@@ -7,3 +7,6 @@ output "ec2_public_dns" {
   value = module.my_ec2.public_dns
 }
 
+output "connection_string" {
+  value = "ssh -i /home/${var.deployer_user}/.ssh/terraform ec2-user@${module.my_ec2.public_dns}"
+}
